@@ -25,9 +25,9 @@ def make_embed(user, member):
 
     background.save(fp="ting.png")
 @app.route("/<id>")
-def hello_world(id):
+async def hello_world(id):
   
-    user, member = get_user_from_id(id)    
+    user, member = await get_user_from_id(id)    
     print(user, member)
     response = requests.get(user.avatar)
     img = Image.open(BytesIO(response.content))
