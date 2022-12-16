@@ -7,7 +7,7 @@ import easy_pil
 from easy_pil import Font
 app = Flask(__name__)
 import os
-import time
+
 #import aioflask
 
 def make_embed(user, member):
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     port = os.environ.get("PORT")
     app.run(port=port, debug=True, host="0.0.0.0")
     run()
-    time.sleep(5)
+    
     quit()
     
     
