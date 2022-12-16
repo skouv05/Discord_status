@@ -23,7 +23,7 @@ def make_embed(user, member, avar):
     if avar == "true":
         profile = easy_pil.Editor("img.png").resize((75, 75)).circle_image()
     else:
-        profile = easy_pil.Editor("default.png").resize((75, 75)).circle_image()
+        profile = easy_pil.Editor("default2.png").resize((75, 75)).circle_image()
     background.paste(profile, (10, 10))
 
     poppins = Font.poppins(size=50, variant="bold")
