@@ -1,5 +1,4 @@
 discord
-flask
+flask[async]
 easy-pil
 requests
-aioflask
