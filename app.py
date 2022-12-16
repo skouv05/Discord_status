@@ -43,13 +43,14 @@ def hello_world(id):
         return "You are not allowed to use this bot"
     user, member = get_user_from_id(id)    
     print(user, member)
-    if user.avatar == None:
-        avar = "false"
-    else:
+    try:
+        response = requests.get(user.avatar)
+        img = Image.open(BytesIO(response.content))
+        img.save("img.png")
         avar = "true"
-    response = requests.get(user.avatar)
-    img = Image.open(BytesIO(response.content))
-    img.save("img.png")
+    except:
+        avar = "false"
+    
     make_embed(user, member, avar)
     
     return send_file("ting.png", mimetype="image/png")
