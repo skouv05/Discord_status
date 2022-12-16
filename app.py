@@ -38,6 +38,6 @@ async def hello_world(id):
 
 if __name__ == "__main__":
     port = os.environ.get("PORT")
-    app.run(port=5000, debug=True, host="0.0.0.0")
+    app.run(port=port, debug=True, host="0.0.0.0")
     run()
     
