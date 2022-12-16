@@ -7,7 +7,6 @@ import easy_pil
 from easy_pil import Font
 app = Flask(__name__)
 import os
-port = os.environ.get("PORT")
 
 def make_embed(user, member):
     background =easy_pil.Editor("back.png")
@@ -40,4 +39,5 @@ async def hello_world(id):
     return send_file("ting.png", mimetype="image/png")
 
 if __name__ == "__main__":
-    app.run(port=port  or 5000)
+    port = os.environ.get("PORT")
+    app.run(port=int(port) or 5000)
