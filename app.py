@@ -7,6 +7,7 @@ import easy_pil
 from easy_pil import Font
 app = Flask(__name__)
 import os
+import aioflask
 
 def make_embed(user, member):
     background =easy_pil.Editor("back.png")

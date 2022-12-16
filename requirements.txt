@@ -2,3 +2,4 @@ discord
 flask
 easy-pil
 requests
+aioflask
