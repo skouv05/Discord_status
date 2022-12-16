@@ -1,6 +1,5 @@
 from flask import Flask, send_file, render_template
 from disc import get_user_from_id
-from PIL import Image
 import requests
 from io import BytesIO
 import easy_pil
