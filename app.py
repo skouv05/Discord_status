@@ -1,5 +1,5 @@
 from flask import Flask, send_file, render_template
-from disc import get_user_from_id, run_bot
+from disc import get_user_from_id,run
 import requests
 from io import BytesIO
 from PIL import Image
@@ -27,8 +27,8 @@ def make_embed(user, member):
 @app.route("/<id>")
 async def hello_world(id):
   
-    user, member = get_user_from_id(id)    
-    
+    user, member = await get_user_from_id(id)    
+    print(user, member)
     response = requests.get(user.avatar)
     img = Image.open(BytesIO(response.content))
     img.save("img.png")
@@ -39,4 +39,4 @@ async def hello_world(id):
 if __name__ == "__main__":
     port = os.environ.get("PORT")
     app.run(port=5000, debug=True)
-    run_bot()
+    run()
