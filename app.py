@@ -18,9 +18,12 @@ t1.start()
 
 
 
-def make_embed(user, member):
+def make_embed(user, member, avar):
     background =easy_pil.Editor("back.png")
-    profile = easy_pil.Editor("img.png").resize((75, 75)).circle_image()
+    if avar == "true":
+        profile = easy_pil.Editor("img.png").resize((75, 75)).circle_image()
+    else:
+        profile = easy_pil.Editor("default.png").resize((75, 75)).circle_image()
     background.paste(profile, (10, 10))
 
     poppins = Font.poppins(size=50, variant="bold")
@@ -39,10 +42,14 @@ def hello_world(id):
     
     user, member = get_user_from_id(id)    
     print(user, member)
+    if user.avatar == None:
+        avar = "false"
+    else:
+        avar = "true"
     response = requests.get(user.avatar)
     img = Image.open(BytesIO(response.content))
     img.save("img.png")
-    make_embed(user, member)
+    make_embed(user, member, avar)
     
     return send_file("ting.png", mimetype="image/png")
 
