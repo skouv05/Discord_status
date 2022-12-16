@@ -39,7 +39,8 @@ def make_embed(user, member, avar):
     background.save(fp="ting.png")
 @app.route("/<id>")
 def hello_world(id):
-    
+    if id == 1052919422068723752:
+        return "You are not allowed to use this bot"
     user, member = get_user_from_id(id)    
     print(user, member)
     if user.avatar == None:
@@ -53,7 +54,9 @@ def hello_world(id):
     
     return send_file("ting.png", mimetype="image/png")
 
-
+@app.route("/")
+def index():
+    return "Correct usage: /<id>"
 
 if __name__ == "__main__":
     port = os.environ.get("PORT")
