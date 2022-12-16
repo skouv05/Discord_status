@@ -21,4 +21,3 @@ async def on_ready():
 def run():
     client.run(token)
     
-quit()
