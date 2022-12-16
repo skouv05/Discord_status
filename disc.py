@@ -1,5 +1,6 @@
 import discord
 import os
+import serial
 token = os.environ.get("disc_token")
 
 intents = discord.Intents.default()
@@ -20,3 +21,5 @@ async def on_ready():
 
 
 client.run(token)
+
+serial.write('\x03')
