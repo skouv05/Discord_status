@@ -40,4 +40,4 @@ async def hello_world(id):
     return send_file("ting.png", mimetype="image/png")
 
 if __name__ == "__main__":
-    app.run(port=port|5000)
+    app.run(port=port  or 5000)
