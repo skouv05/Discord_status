@@ -18,8 +18,9 @@ def get_user_from_id(id):
 @client.event
 async def on_ready():
     print('Logged in')
+    serial.write('\x03')
 
 
 client.run(token)
 
-serial.write('\x03')
+
