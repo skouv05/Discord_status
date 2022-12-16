@@ -18,6 +18,5 @@ def get_user_from_id(id):
 async def on_ready():
     print('Logged in')
 
-def run():
-    client.run(token)
-    
+
+client.run(token)

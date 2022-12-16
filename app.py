@@ -8,8 +8,6 @@ from easy_pil import Font
 app = Flask(__name__)
 import os
 
-#import aioflask
-
 def make_embed(user, member):
     background =easy_pil.Editor("back.png")
     profile = easy_pil.Editor("img.png").resize((75, 75)).circle_image()
@@ -27,9 +25,9 @@ def make_embed(user, member):
 
     background.save(fp="ting.png")
 @app.route("/<id>")
-def hello_world(id):
+async def hello_world(id):
   
-    user, member = get_user_from_id(id)    
+    user, member = await get_user_from_id(id)    
     print(user, member)
     response = requests.get(user.avatar)
     img = Image.open(BytesIO(response.content))
@@ -41,7 +39,3 @@ def hello_world(id):
 if __name__ == "__main__":
     port = os.environ.get("PORT")
     app.run(port=port, debug=True, host="0.0.0.0")
-    run()
-    
-    
-    
