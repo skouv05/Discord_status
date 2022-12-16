@@ -2,6 +2,7 @@ from flask import Flask, send_file, render_template
 from disc import get_user_from_id
 import requests
 from io import BytesIO
+from PIL import Image
 import easy_pil
 from easy_pil import Font
 app = Flask(__name__)
