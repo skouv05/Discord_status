@@ -28,7 +28,4 @@ async def on_ready():
     print('Logged in')
 
 
-
-
-
 client.run(token)

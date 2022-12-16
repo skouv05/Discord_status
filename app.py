@@ -1,5 +1,5 @@
 from flask import Flask, send_file, render_template
-from disc import get_user_from_id
+from disc import get_user_from_id, run_bot
 import requests
 from io import BytesIO
 from PIL import Image
@@ -34,10 +34,9 @@ async def hello_world(id):
     img.save("img.png")
     make_embed(user, member)
     
-
-
     return send_file("ting.png", mimetype="image/png")
 
 if __name__ == "__main__":
     port = os.environ.get("PORT")
-    app.run(port=int(port) or 5000)
+    app.run(port=5000, debug=True)
+    run_bot()
