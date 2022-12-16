@@ -2,4 +2,5 @@ discord
 flask[async]
 easy-pil
 requests
-serial
+pyserial
+asyncio
