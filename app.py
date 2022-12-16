@@ -7,7 +7,7 @@ import easy_pil
 from easy_pil import Font
 app = Flask(__name__)
 import os
-port = os.environ.get("port")
+port = os.environ.get("PORT")
 
 def make_embed(user, member):
     background =easy_pil.Editor("back.png")
