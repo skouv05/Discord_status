@@ -1,6 +1,6 @@
 import discord
 import os
-token = os.environ.get("disc-token")
+token = os.environ.get("disc_token")
 
 
 intents = discord.Intents.default()
