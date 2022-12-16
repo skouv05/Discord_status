@@ -8,7 +8,7 @@ intents.members = True
 intents.presences = True
 client = discord.Client(intents=intents)
 
-async def get_user_from_id(id):
+def get_user_from_id(id):
     in_server = client.get_user(int(id))
     guild=client.get_guild(1052919584287629312)
     member = guild.get_member(int(id))
