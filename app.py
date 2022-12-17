@@ -57,7 +57,7 @@ def hello_world(id):
 
 @app.route("/")
 def index():
-    return "Correct usage: /<id>"
+    return render_template("index.html")
 
 if __name__ == "__main__":
     port = os.environ.get("PORT")
