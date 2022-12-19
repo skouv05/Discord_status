@@ -12,10 +12,13 @@ intents.presences = True
 client = discord.Client(intents=intents)
 
 def get_user_from_id(id):
-    in_server = client.get_user(int(id))
-    guild=client.get_guild(int(guild_id))
-    member = guild.get_member(int(id))
-    return in_server, member
+    try:
+        in_server = client.get_user(int(id))
+        guild=client.get_guild(int(guild_id))
+        member = guild.get_member(int(id))
+        return in_server, member
+    except:
+        return None, None
 
 @client.event
 async def on_ready():

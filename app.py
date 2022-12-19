@@ -39,8 +39,6 @@ def make_embed(user, member, avar):
     background.save(fp="ting.png")
 @app.route("/<id>")
 def hello_world(id):
-    if id == 1052919422068723752:
-        return "You are not allowed to use this bot"
 
     
     user, member = get_user_from_id(id) 
