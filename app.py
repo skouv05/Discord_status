@@ -41,11 +41,10 @@ def make_embed(user, member, avar):
 def hello_world(id):
     if id == 1052919422068723752:
         return "You are not allowed to use this bot"
-    try:
-        user, member = get_user_from_id(id)   
-
-    except:
-        return "Invalid ID" 
+    
+    user, member = get_user_from_id(id) 
+    if user == None or member == None:
+        return "User not found"   
     print(user, member)
     try:
         response = requests.get(user.avatar)
